@@ -22,7 +22,7 @@ class Robot(Sprite):
         # put sweeper on the center of window
         self.rect.center = self.screen_rect.center
         # 初始角度
-        self.angle = 0
+        self.angle = 90
         self.moving_speed = [1, 1]
         self.moving_pos = [None, None]
         # 使用浮点数存储精确位置
