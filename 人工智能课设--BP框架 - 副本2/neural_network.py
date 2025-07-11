@@ -158,6 +158,19 @@ class NeuralNetwork:
             self.weights1 += state.T.dot(hidden_delta) * self.learning_rate
             self.bias1 += np.sum(hidden_delta, axis=0, keepdims=True) * self.learning_rate
 
+    def save_experience(self, filename):
+    """将经验保存到文件"""
+    with open(filename, 'wb') as f:
+        pickle.dump(self.experience_buffer, f)
+
+    def load_experience(self, filename):
+    """从文件加载经验"""
+    try:
+        with open(filename, 'rb') as f:
+            self.experience_buffer = pickle.load(f)
+    except FileNotFoundError:
+        print("No saved experience found. Starting fresh.")
+
     def periodic_training(self):
         """定期训练神经网络"""
         self.train()
