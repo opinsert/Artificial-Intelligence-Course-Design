@@ -114,6 +114,8 @@ def run_game():
 
                 # 检查是否所有灰尘都被清除
                 if len(dusts) == 0:
+                     # 保存神经网络和经验
+                    robot.nn.save_experience('experience.pkl')
                     game_over = True
         else:
             # 只在第一次进入游戏结束状态时显示弹窗
