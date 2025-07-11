@@ -64,6 +64,9 @@ class Robot(Sprite):
         # 添加预测时间跟踪
         self.last_prediction_time = time.time()  # 记录上次预测时间
 
+        # 尝试加载之前的经验
+        self.nn.load_experience('experience.pkl')
+
     def blitme(self):
         # buld the sweeper at the specific location
         self.screen.blit(self.image, self.rect)
