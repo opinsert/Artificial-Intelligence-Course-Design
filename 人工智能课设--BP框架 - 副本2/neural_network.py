@@ -3,7 +3,7 @@
 import numpy as np
 import math
 import random
-
+import pickle
 
 class NeuralNetwork:
     """三层BP神经网络"""
